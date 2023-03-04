@@ -366,3 +366,11 @@ begin
    end if;
 end; $$
 
+
+
+-- tạo một event insert vào bảng employees với time là 6h30 ngày 16-02-2023
+create event if not exists insert_employee
+on schedule at '2023-02-16 6:30:00'
+do
+	INSERT INTO `qlds`.`employees` (`first_name`, `last_name`, `email`, `phone_number`, `hire_date`, `job_id`, `salary`, `manager_id`, `department_id`) 
+    VALUES ('lan', 'anh', 'lananh@gmail.com', '09723456786', '2023-02-10', '8', '7500', '201', '6');
